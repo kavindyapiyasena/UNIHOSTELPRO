@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyappUniHstel</string>
+    <string-array name="flow_options">
+        <item>First flow</item>
+        <item>Second flow</item>
+        <item>Third flow</item>
+    </string-array>
+</resources>

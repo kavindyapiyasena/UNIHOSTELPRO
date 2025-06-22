@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        android:background="#D3D3D3">
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/app_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UniHostelPro"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Welcome Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WELCOME"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Instructions -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scan QR code and get Access to IN/ OUT in Hostel\nEnvironment"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp"/>
+
+        <!-- Checkboxes -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <CheckBox
+                android:id="@+id/checkbox_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IN"
+                android:textColor="#000000"
+                android:layout_marginBottom="8dp"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_out"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OUT"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+        <!-- Placeholder Image (QR Code image or blank space before scan) -->
+        <ImageView
+            android:id="@+id/qr_placeholder"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/istockphoto"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/white"
+            android:scaleType="centerInside" />
+
+        <!-- Scan Button -->
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan and Continue"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#3399FF"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="32dp"/>
+    </LinearLayout>
+</ScrollView>

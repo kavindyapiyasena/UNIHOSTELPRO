@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.abc.myappunihstel">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyappUniHstel"
+        tools:targetApi="31"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules">
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCVPkGalwDWBELDlmNK5Z773DeIiQKrh24" />
+
+        <!-- Main Launcher Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other Activities -->
+        <activity android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
+        <activity android:name=".Dashboard" />
+        <activity android:name=".Signup" />
+        <activity android:name=".StudentRegActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".QrActivity" />
+        <activity android:name=".CaptureAct"
+            android:screenOrientation="portrait"
+            android:theme="@style/zxing_CaptureTheme" />
+
+        <!-- ✅ Complaint Form Activity -->
+        <activity android:name=".ComplaintFormActivity" />
+
+        <!-- ✅ Staff Contact Activity -->
+        <activity android:name=".StaffContactActivity" />
+
+        <!-- ✅ Add Payment Activity -->
+        <activity android:name=".AddPaymentActivity" />
+
+        <!-- ✅ Add Members Activity -->
+        <activity android:name=".AddMembersActivity" />
+
+        <!-- ✅ Fingerprint Activity -->
+        <activity android:name=".FingerprintActivity" />
+
+    </application>
+</manifest>
