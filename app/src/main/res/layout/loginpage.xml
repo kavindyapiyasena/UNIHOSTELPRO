@@ -1,114 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F3F3"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#EAF2F8">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
+    <!-- Login Page Title with Black Color -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login Page"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp">
+        android:hint="Username"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text"/>
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login to UniHostelPro"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="30dp" />
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:drawable/edit_text"/>
 
-        <!-- Card-style Login Container -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#E0E0E0"
-            android:padding="24dp"
-            android:elevation="6dp"
-            android:layout_margin="8dp">
+    <!-- TextView to display username & password after login -->
+    <TextView
+        android:id="@+id/tvUserPassDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:gravity="center"/>
 
-            <!-- Username Label -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Username:"
-                android:textStyle="bold"
-                android:textColor="#000000" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="10dp"/>
 
-            <!-- Username Input -->
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Username"
-                android:inputType="text"
-                android:background="#FFF0F0"
-                android:padding="10dp"
-                android:layout_marginBottom="16dp" />
+    <!-- Create Account TextView -->
+    <TextView
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Account"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="16sp"/>
 
-            <!-- Password Label -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password:"
-                android:textStyle="bold"
-                android:textColor="#000000" />
+    <!-- Fingerprint Login TextView -->
+    <TextView
+        android:id="@+id/fingerprintText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Fingerprint Login"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="16sp"/>
 
-            <!-- Password Input -->
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Password"
-                android:inputType="textPassword"
-                android:background="#FFFFFF"
-                android:padding="10dp"
-                android:layout_marginBottom="20dp" />
-
-            <!-- Login Button -->
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Log in"
-                android:backgroundTint="#2196F3"
-                android:textColor="#FFFFFF" />
-
-            <!-- Create Account Text -->
-            <TextView
-                android:id="@+id/createAccount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create Account"
-                android:textColor="#0000FF"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:layout_gravity="center_horizontal" />
-        </LinearLayout>
-
-        <!-- Fingerprint Login Link (Initially Hidden or Visible) -->
-        <TextView
-            android:id="@+id/fingerprintText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login with Fingerprint"
-            android:textColor="#007BFF"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginTop="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone"
-            android:layout_gravity="center_horizontal" />
-
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

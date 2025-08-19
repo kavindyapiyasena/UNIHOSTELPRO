@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2F8"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add new card"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:padding="10dp"/>
+
+        <!-- Card Image -->
+        <ImageView
+            android:id="@+id/ivCardImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/blackcard"
+            android:scaleType="fitCenter"/>
+
+        <!-- Card Number -->
+        <EditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card number"
+            android:inputType="number"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Card Holder -->
+        <EditText
+            android:id="@+id/etCardHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Card Holder's name"
+            android:inputType="textPersonName"
+            android:layout_marginTop="12dp"/>
+
+        <!-- Expiry and CVV -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+
+            <EditText
+                android:id="@+id/etExpiry"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="MM/YY"
+                android:inputType="date"/>
+
+            <EditText
+                android:id="@+id/etCVV"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:inputType="numberPassword"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- Default card checkbox -->
+        <CheckBox
+            android:id="@+id/cbDefaultCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set as default card"
+            android:layout_marginTop="15dp"/>
+
+        <!-- Pay Now -->
+        <Button
+            android:id="@+id/btnAddCardPayNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay Now"
+            android:backgroundTint="#1A237E"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>

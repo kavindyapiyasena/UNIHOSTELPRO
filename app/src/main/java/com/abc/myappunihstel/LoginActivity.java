@@ -3,8 +3,6 @@ package com.abc.myappunihstel;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
 
     EditText edtUsername, edtPassword;
-    Button btnLogin;
-    TextView txtCreateAccount, fingerprintText;
+    TextView txtCreateAccount, fingerprintText, tvUserPassDisplay;
     DatabaseHelper databaseHelper;
     SharedPreferences prefs;
 
@@ -24,21 +21,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
 
-        edtUsername = findViewById(R.id.username);
-        edtPassword = findViewById(R.id.password);
-        btnLogin = findViewById(R.id.loginButton);
+        edtUsername = findViewById(R.id.etUsername);
+        edtPassword = findViewById(R.id.etPassword);
         txtCreateAccount = findViewById(R.id.createAccount);
         fingerprintText = findViewById(R.id.fingerprintText);
+        tvUserPassDisplay = findViewById(R.id.tvUserPassDisplay);
 
         databaseHelper = new DatabaseHelper(this);
         prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-        boolean isFirstLogin = prefs.getBoolean("first_login_done", false);
-
-        // Force show for testing — remove this after testing
-        fingerprintText.setVisibility(View.VISIBLE);
-
-        btnLogin.setOnClickListener(v -> {
+        // Login button click listener
+        findViewById(R.id.btnLogin).setOnClickListener(v -> {
             String username = edtUsername.getText().toString().trim();
             String password = edtPassword.getText().toString().trim();
 
@@ -49,12 +42,20 @@ public class LoginActivity extends AppCompatActivity {
 
             boolean isValid = databaseHelper.checkUser(username, password);
             if (isValid) {
+                // Save login info
                 prefs.edit()
                         .putBoolean("first_login_done", true)
                         .putString("saved_username", username)
+                        .putString("saved_password", password)
                         .apply();
 
-                Toast.makeText(this, "Login Successful. Fingerprint will be used next time.", Toast.LENGTH_SHORT).show();
+                // Show username and password in black
+                tvUserPassDisplay.setTextColor(getResources().getColor(android.R.color.black));
+                tvUserPassDisplay.setText("Username: " + username + "\nPassword: " + password);
+
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                // Go to Dashboard
                 startActivity(new Intent(LoginActivity.this, Dashboard.class));
                 finish();
             } else {
@@ -62,17 +63,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // Navigate to Signup page
         txtCreateAccount.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this, Signup.class));
         });
 
-        fingerprintText.setOnClickListener(v -> {
-            // Show confirmation for debug
-            Toast.makeText(this, "Opening Fingerprint Activity", Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(LoginActivity.this, FingerprintActivity.class);
-            intent.putExtra("from_login_page", true);
-            startActivity(intent);
-        });
+        // Fingerprint click
+        if (fingerprintText != null) {
+            fingerprintText.setOnClickListener(v -> {
+                Toast.makeText(this, "Opening Fingerprint Activity", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, FingerprintActivity.class));
+            });
+        }
     }
 }

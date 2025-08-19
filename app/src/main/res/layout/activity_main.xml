@@ -3,7 +3,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9D3D3">
+    android:background="#6E82B7">
 
     <!-- App Title -->
     <TextView
@@ -12,10 +12,13 @@
         android:layout_height="wrap_content"
         android:text="UniHostelPro"
         android:textStyle="bold"
-        android:textColor="#000000"
-        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp" />
+        android:layout_marginTop="80dp"
+        android:background="#6A3A39"
+        android:padding="12dp"
+        android:fontFamily="sans-serif-condensed" />
 
     <!-- Sub Title -->
     <TextView
@@ -24,10 +27,10 @@
         android:layout_height="wrap_content"
         android:text="OPEN UNIVERSITY OF SRI LANKA"
         android:textColor="#000000"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_below="@id/appTitle"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="20dp" />
 
     <!-- Hostel Image -->
     <ImageView
@@ -46,13 +49,15 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="GO TO LOGIN"
         android:layout_below="@id/hostelIcon"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_margin="16dp"
         android:backgroundTint="#6A3A39"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:textSize="18sp" />
 
     <!-- Website Link at the Bottom -->
     <TextView
@@ -75,7 +80,7 @@
         android:id="@+id/loginLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Login"
+        android:text="SARASAWI MADURA"
         android:textColor="#0000FF"
         android:textSize="16sp"
         android:textStyle="bold"

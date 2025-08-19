@@ -40,7 +40,8 @@
         </activity>
 
         <!-- Other Activities -->
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/Theme.Material3.DayNight.NoActionBar" />
         <activity android:name=".Dashboard" />
@@ -48,7 +49,8 @@
         <activity android:name=".StudentRegActivity" />
         <activity android:name=".MapActivity" />
         <activity android:name=".QrActivity" />
-        <activity android:name=".CaptureAct"
+        <activity
+            android:name=".CaptureAct"
             android:screenOrientation="portrait"
             android:theme="@style/zxing_CaptureTheme" />
 
@@ -61,11 +63,17 @@
         <!-- ✅ Add Payment Activity -->
         <activity android:name=".AddPaymentActivity" />
 
+        <!-- ✅ Card Payment Activity -->
+        <activity android:name=".cardpayment" />
+
         <!-- ✅ Add Members Activity -->
         <activity android:name=".AddMembersActivity" />
 
         <!-- ✅ Fingerprint Activity -->
         <activity android:name=".FingerprintActivity" />
+
+        <!-- ✅ Add New Card Activity -->
+        <activity android:name=".activity_add_new_card" />
 
     </application>
 </manifest>

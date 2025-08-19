@@ -37,14 +37,22 @@ public class AddPaymentActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, months);
         spinnerMonth.setAdapter(adapter);
 
+        // Pay button
         btnPay.setOnClickListener(v -> {
             Toast.makeText(this, "Payment submitted!", Toast.LENGTH_SHORT).show();
         });
 
+        // Back button
         btnBack.setOnClickListener(v -> {
             Intent intent = new Intent(AddPaymentActivity.this, Dashboard.class);
             startActivity(intent);
             finish();
+        });
+
+        // ✅ Credit Card button → open CardPayment UI
+        btnCreditCard.setOnClickListener(v -> {
+            Intent intent = new Intent(AddPaymentActivity.this, cardpayment.class);
+            startActivity(intent);
         });
     }
 }
