@@ -5,4 +5,6 @@
         <item>Second flow</item>
         <item>Third flow</item>
     </string-array>
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
 </resources>

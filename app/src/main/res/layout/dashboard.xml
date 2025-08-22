@@ -1,277 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Main Content -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#ffffff"
-        android:layout_margin="16dp"
-        android:layout_gravity="center"
-        android:elevation="4dp">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
-        <!-- Welcome Message -->
-        <TextView
-            android:id="@+id/tvWelcome"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to the Dashboard!"
-            android:textSize="24sp"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#ffffff"
+            android:layout_margin="16dp"
             android:layout_gravity="center"
-            android:paddingBottom="12dp"
-            android:textColor="#000000" />
+            android:elevation="4dp">
 
-        <!-- Header -->
-        <TextView
-            android:id="@+id/headerTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Open university Hostel"
-            android:textSize="18sp"
-            android:textColor="#000000"
-            android:layout_gravity="center" />
+            <!-- Welcome Message -->
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to the Dashboard!"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:paddingBottom="12dp"
+                android:textColor="#000000" />
 
-        <!-- Dashboard Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="16dp">
+            <!-- Header -->
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open university Hostel"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_gravity="center" />
 
+            <!-- Dashboard Section -->
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="#cce6ff"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginEnd="8dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="16dp">
 
-                <TextView
-                    android:text="$"
-                    android:textSize="24sp"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#cce6ff"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:text="$"
+                        android:textSize="24sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:text="RS 10,000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000" />
+                    <TextView
+                        android:text="Today Collection"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="#99ccff"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:text="📅"
+                        android:textSize="24sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="RS 12,000"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Dues till days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#666" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bed Info Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:weightSum="2">
+
+                <!-- Empty Bed -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="#e6fff2"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:text="🛏️"
+                        android:textSize="24sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="28"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Empty Bed"
+                        android:textColor="#333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!-- Occupied Bed -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="#ffe6e6"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:text="🛏️"
+                        android:textSize="24sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="54"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:text="Occupied Bed"
+                        android:textColor="#333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Quick Actions -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Action"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:layout_marginTop="8dp"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/btnAddMembers"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Add Members"
+                    android:backgroundTint="#cce6ff"
                     android:textColor="#000000" />
-                <TextView
-                    android:text="RS 10,000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
+
+                <Button
+                    android:id="@+id/btnAddPayment"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Add Payment"
+                    android:backgroundTint="#cce6ff"
                     android:textColor="#000000" />
-                <TextView
-                    android:text="Today Collection"
-                    android:layout_width="wrap_content"
+
+                <Button
+                    android:id="@+id/btnStudentReg"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="#666" />
-            </LinearLayout>
+                    android:layout_columnWeight="1"
+                    android:text="Student Registration"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:background="#99ccff"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:text="📅"
-                    android:textSize="24sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="RS 12,000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Dues till days"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnInquiries"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textColor="#666" />
-            </LinearLayout>
+                    android:layout_columnWeight="1"
+                    android:text="Student Inquiries"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnStaffContact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Staff Contact"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnComplains"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Complains"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnDirection"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Hostel Direction"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnPaymentDue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="Payment Due"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnInOut"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:text="IN / OUT"
+                    android:backgroundTint="#cce6ff"
+                    android:textColor="#000000" />
+            </GridLayout>
+
+            <!-- TFR Button -->
+            <Button
+                android:id="@+id/btnViewTFR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View TFR Payment"
+                android:layout_marginTop="16dp"
+                android:background="#cccccc"
+                android:textColor="#000000" />
         </LinearLayout>
+    </ScrollView>
 
-        <!-- Bed Info Section -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            android:weightSum="2">
+    <!-- Side Menu -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/side_menu"
+        app:headerLayout="@layout/nav_header" />
 
-            <!-- Empty Bed -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:background="#e6fff2"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginEnd="8dp">
-
-                <TextView
-                    android:text="🛏️"
-                    android:textSize="24sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="28"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Empty Bed"
-                    android:textColor="#333"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <!-- Occupied Bed -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="80dp"
-                android:layout_weight="1"
-                android:background="#ffe6e6"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:text="🛏️"
-                    android:textSize="24sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="54"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Occupied Bed"
-                    android:textColor="#333"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Quick Actions -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quick Action"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp" />
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:layout_marginTop="8dp"
-            android:useDefaultMargins="true">
-
-            <Button
-                android:id="@+id/btnAddMembers"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Add Members"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnAddPayment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Add Payment"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnStudentReg"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Student Registration"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnInquiries"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Student Inquiries"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnStaffContact"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Staff Contact"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnComplains"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Complains"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnDirection"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Hostel Direction"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnPaymentDue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="Payment Due"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/btnInOut"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:text="IN / OUT"
-                android:backgroundTint="#cce6ff"
-                android:textColor="#000000" />
-        </GridLayout>
-
-        <!-- TFR Button -->
-        <Button
-            android:id="@+id/btnViewTFR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View TFR Payment"
-            android:layout_marginTop="16dp"
-            android:background="#cccccc"
-            android:textColor="#000000" />
-    </LinearLayout>
-</ScrollView>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -46,6 +46,8 @@ dependencies {
 
     // ✅ Biometric Authentication
     implementation("androidx.biometric:biometric:1.1.0")
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     // ✅ Testing
     testImplementation(libs.junit)
